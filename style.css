@@ -1,55 +1,19 @@
-/* Reset some default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: #0f172a; /* Dark slate background */
-    font-family: 'Inter', sans-serif;
-  }
-  
-  /* Button styles */
-  .contact-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #2563eb; /* Blue button color */
-    color: white;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  .contact-btn i {
-    margin-right: 8px; /* Space between icon and text */
-  }
-  
-  /* Text styles */
-  h1, h2, p {
-    color: #94a3b8; /* Light slate color for text */
-  }
-  
-  /* Custom cursor styling */
-  #cursor {
+/* Custom cursor styling */
+#cursor {
     position: absolute;
-    width: 150px; /* Increased size for better visibility */
-    height: 150px;
+    width: 200px; /* Increased size for a smoother transition */
+    height: 200px;
     border-radius: 50%;
     
      /* Radial gradient effect transitioning into background color */
-     background: radial-gradient(circle at center, rgba(29,78,216,0.4), rgba(15,23,42,0));
+     background: radial-gradient(circle at center, rgba(29,78,216,0.2), rgba(15,23,42,0) 80%);
     
      pointer-events: none; /* Ensures it doesn't block interactions */
      transform: translate(-50%, -50%);
-     transition: transform .15s ease-out; /* Smooth movement */
+     transition: transform .1s ease-out; /* Smooth movement */
      z-index:9999; /* Ensure it's on top of other elements */
   }
   
   body {
       cursor: none; /* Hide default cursor */
-  }
-  
-  /* Link hover effect (optional) */
-  a:hover {
-      color: #38bdf8; /* Teal hover effect for links */
   }
