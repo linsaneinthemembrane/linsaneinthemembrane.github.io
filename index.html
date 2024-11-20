@@ -1,24 +1,96 @@
 <!DOCTYPE html>
-<html>
-<h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl"> 
-    <a href = "/">Alex Lin</a>
-</h1>
-<h2 class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl"> Aspiring Data Scientist</h2>
-<p class="mt-4 max-w-xs leading-normal">I craft insightful data visualizations and deliver actionable insights to help companies make informed decisions and drive meaningful impact.</p>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Lin - Aspiring Data Scientist</title>
 
-<section id="contact" class="contact">
+  <!-- Font Awesome CDN link for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #007debc7; /* Background color */
+      font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      cursor: none; /* Hide default cursor */
+    }
+
+    .contact-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #0f172a; /* Button color */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin: 10px;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .contact-btn i {
+      margin-right: 8px; /* Space between icon and text */
+    }
+
+    h1, h2, p {
+      color: #2600ff; /* Text color */
+    }
+
+    /* Custom cursor styling */
+    .cursor {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: radial-gradient(600px circle at 0px 0px, rgba(29, 78, 216, 0.15), transparent 80%);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      animation: pulse 1.5s infinite;
+    }
+
+    /* Animation for the cursor */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main content of the page -->
+  <h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl"> 
+    <a href="/">Alex Lin</a>
+  </h1>
+  <h2 class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl"> Aspiring Data Scientist</h2>
+  <p class="mt-4 max-w-xs leading-normal">I craft insightful data visualizations and deliver actionable insights to help companies drive meaningful impact.</p>
+
+  <section id="contact" class="contact">
     <div class="contact-links">
       <a href="https://github.com/linsaneinthemembrane" target="_blank">
-        <button class="contact-btn">GitHub</button>
+        <button class="contact-btn">
+          <i class="fab fa-github"></i> GitHub
+        </button>
       </a>
       <a href="https://www.linkedin.com/in/alexlin4" target="_blank">
-        <button class="contact-btn">LinkedIn</button>
+        <button class="contact-btn">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </button>
       </a>
     </div>
   </section>
 
-</li></ul>
-<body>
-<h1></h1>
+  <!-- Custom cursor element -->
+  <div class="cursor"></div>
+
+  <!-- Link to external JavaScript file -->
+  <script src="script.js"></script>
+
 </body>
 </html>
