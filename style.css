@@ -6,19 +6,18 @@
   }
   
   body {
-    background-color: #007debc7; /* Background color */
-    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-color: #0f172a; /* Dark background */
+    font-family: 'Inter', sans-serif;
   }
   
   /* Button styles */
   .contact-btn {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #0f172a; /* Button color */
+    background-color: #2563eb; /* Blue button color */
     color: white;
     border: none;
     border-radius: 5px;
-    margin: 10px;
   }
   
   .contact-btn i {
@@ -27,7 +26,7 @@
   
   /* Text styles */
   h1, h2, p {
-    color: #2600ff; /* Text color */
+    color: #94a3b8; /* Light slate color for text */
   }
   
   /* Custom cursor styling */
@@ -36,12 +35,21 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: radial-gradient(circle at center, rgba(29,78,216,0.15), transparent);
-    pointer-events: none; /* Ensures it doesn't block interactions */
+    
+     /* Radial gradient effect with blue accent */
+     background: radial-gradient(circle at center, rgba(29,78,216,0.15), transparent);
+    
+     pointer-events: none; /* Ensures it doesn't block interactions */
+     transform: translate(-50%, -50%);
+     transition: transform .15s ease-out; /* Smooth movement */
+     z-index:9999; /* Ensure it's on top of other elements */
   }
   
-  /* Smooth transition for cursor movement */
   body {
       cursor: none; /* Hide default cursor */
   }
   
+  /* Link hover effect (optional) */
+  a:hover {
+      color: #38bdf8; /* Teal hover effect for links */
+  }
