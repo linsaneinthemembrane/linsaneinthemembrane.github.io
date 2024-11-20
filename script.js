@@ -3,7 +3,7 @@ const cursor = document.getElementById('cursor');
 
 // Listen for mousemove events on the document
 document.addEventListener('mousemove', (e) => {
-    // Get mouse position
+    // Get mouse position relative to viewport
     const mouseX = e.clientX;
     const mouseY = e.clientY;
 

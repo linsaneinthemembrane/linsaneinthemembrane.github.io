@@ -6,7 +6,7 @@
   }
   
   body {
-    background-color: #0f172a; /* Dark background */
+    background-color: #0f172a; /* Dark slate background */
     font-family: 'Inter', sans-serif;
   }
   
@@ -32,12 +32,12 @@
   /* Custom cursor styling */
   #cursor {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 150px; /* Increased size for better visibility */
+    height: 150px;
     border-radius: 50%;
     
-     /* Radial gradient effect with blue accent */
-     background: radial-gradient(circle at center, rgba(29,78,216,0.15), transparent);
+     /* Radial gradient effect transitioning into background color */
+     background: radial-gradient(circle at center, rgba(29,78,216,0.4), rgba(15,23,42,0));
     
      pointer-events: none; /* Ensures it doesn't block interactions */
      transform: translate(-50%, -50%);
