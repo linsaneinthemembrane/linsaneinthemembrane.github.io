@@ -1,11 +1,12 @@
-// Select the cursor element
-const cursor = document.querySelector('.cursor');
+// Select the custom cursor element
+const cursor = document.getElementById('cursor');
 
-// Listen for the mousemove event to track the mouse position
+// Listen for mousemove events on the document
 document.addEventListener('mousemove', (e) => {
-  // Update cursor's position based on mouse movement
-  // Offset the position by half of the cursor element's width and height to center it
-  const cursorSize = 100; // Since your cursor size is 100px in both width and height
-  cursor.style.left = `${e.pageX - cursorSize / 2}px`; // Subtract half of the width to center it
-  cursor.style.top = `${e.pageY - cursorSize / 2}px`;   // Subtract half of the height to center it
+    // Get mouse position
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+
+    // Update the position of the custom cursor
+    cursor.style.transform = `translate(${mouseX - cursor.offsetWidth / 2}px, ${mouseY - cursor.offsetHeight / 2}px)`;
 });
