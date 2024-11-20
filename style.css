@@ -1,19 +1,70 @@
-/* Custom cursor styling */
-#cursor {
-    position: absolute;
-    width: 200px; /* Increased size for a smoother transition */
-    height: 200px;
-    border-radius: 50%;
-    
-     /* Radial gradient effect transitioning into background color */
-     background: radial-gradient(circle at center, rgba(29,78,216,0.2), rgba(15,23,42,0) 80%);
-    
-     pointer-events: none; /* Ensures it doesn't block interactions */
-     transform: translate(-50%, -50%);
-     transition: transform .1s ease-out; /* Smooth movement */
-     z-index:9999; /* Ensure it's on top of other elements */
-  }
-  
-  body {
-      cursor: none; /* Hide default cursor */
-  }
+:root {
+    --bg-color: #0f172a;
+    --text-color: #94a3b8;
+    --heading-color: #e2e8f0;
+    --accent-color: #5eead4;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header, main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1, h2, h3 {
+    color: var(--heading-color);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+}
+
+.project {
+    margin-bottom: 2rem;
+}
+
+.technologies {
+    list-style-type: none;
+    padding: 0;
+}
+
+.technologies li {
+    display: inline-block;
+    background-color: rgba(94, 234, 212, 0.1);
+    color: var(--accent-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
