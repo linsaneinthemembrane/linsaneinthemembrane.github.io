@@ -24,7 +24,7 @@ body, html {
     width: 100%;
     height: 100%;
     pointer-events: none; /* Ensure it doesn't block other interactions */
-    background-image: radial-gradient(circle 300px at var(--x) var(--y), rgba(94, 234, 212, 0.5), transparent);
+    background-image: radial-gradient(circle 150px at var(--x) var(--y), rgba(94, 234, 212, 0.5), transparent);
     transition: background-position 0.1s ease-out, background-size 0.1s ease-out;
 }
 
