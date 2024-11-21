@@ -30,27 +30,36 @@ body, html {
     );
 }
 
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 .container {
     display: flex;
     height: 100vh;
     position: relative;
     z-index: 1;
+    max-width: 1200px; /* Adjust this value to control overall width */
+    margin: 0 auto; /* Centers the container */
+    padding: 0 40px; /* Add padding on sides */
 }
 
 .left-pane {
-    width: 30%; /* Reduced from 35% */
-    padding: 60px;
+    width: 30%;
+    padding: 40px;
     position: fixed;
     height: 100vh;
-    overflow-y: auto;
-    display: flex;  /* Add this */
-    flex-direction: column;  /* Add this */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This spreads content to use full height */
 }
 
 .right-pane {
-    width: calc(70% - 80px); /* Fixed calculation: 70% minus padding on both sides */
-    margin-left: 30%; /* Match left-pane width */
-    padding: 60px;
+    width: calc(70% - 80px);
+    margin-left: 30%;
+    padding: 40px;
     height: 100vh;
     overflow-y: auto;
     scroll-snap-type: y mandatory;
@@ -122,8 +131,8 @@ h1, h2 {
 }
 
 .social-links {
-    /*margin-top: 40px;*/
-    margin-bottom: 40px;
+    margin-top: auto; /* Pushes links to bottom */
+    padding-bottom: 40px; /* Add some bottom padding */
     display: flex;
     gap: 15px;
 }
