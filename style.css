@@ -50,10 +50,24 @@ body, html {
     width: 30%;
     padding: 40px;
     position: fixed;
-    height: 100vh;
+    height: calc(100vh - 80px); /* Adjust height to account for padding */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* This spreads content to use full height */
+    justify-content: space-between;
+    overflow-wrap: break-word; /* Makes long text wrap */
+    word-wrap: break-word;
+    overflow: hidden; /* Prevents content from overflowing */
+}
+
+/* Add container for main content */
+.left-pane-content {
+    flex: 1;
+}
+
+.left-pane p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .right-pane {
@@ -131,8 +145,8 @@ h1, h2 {
 }
 
 .social-links {
-    margin-top: auto; /* Pushes links to bottom */
-    padding-bottom: 40px; /* Add some bottom padding */
+    margin-top: auto;
+    padding-bottom: 40px; /* Add space at bottom */
     display: flex;
     gap: 15px;
 }
