@@ -144,9 +144,11 @@ h1, h2 {
 
 .social-links {
     margin-top: auto;
-    padding-bottom: 40px; /* Add space at bottom */
+    padding-bottom: 40px;
     display: flex;
     gap: 15px;
+    position: relative; /* Add this to ensure proper stacking */
+    z-index: 2; /* Ensure icons stay above other elements */
 }
 
 .social-links a {
