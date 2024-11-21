@@ -210,7 +210,9 @@ h1, h2 {
     align-items: center;
     gap: 8px;
     transition: all 0.3s ease;
-    cursor: default; /* Shows it's not clickable */
+    cursor: default;
+    position: relative; /* Add this */
+    z-index: 1; /* Add this */
 }
 
 /* Hover effect for skill items */
@@ -219,10 +221,14 @@ h1, h2 {
     transform: translateY(-2px);
 }
 
-/* Icon styling */
 .skill-item i {
     font-size: 20px;
     color: var(--accent-color);
+    display: inline-flex; /* Add this */
+    align-items: center; /* Add this */
+    justify-content: center; /* Add this */
+    width: 20px; /* Add this */
+    height: 20px; /* Add this */
 }
 
 /* Ensure skill items don't get affected by left pane */
@@ -231,10 +237,10 @@ h1, h2 {
     z-index: 1; /* Ensure skills are above the left pane */
 }
 
-/* Text styling */
 .skill-item span {
     color: var(--text-color);
     font-size: 14px;
+    font-family: "League Spartan", Arial, sans-serif;
 }
 
 /* Category heading */
