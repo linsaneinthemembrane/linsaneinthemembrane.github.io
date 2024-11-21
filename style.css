@@ -64,6 +64,17 @@ body, html {
     /* Remove display: flex and justify-content if present */
 }
 
+.right-pane {
+    /* ... existing styles ... */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Chrome, Safari and Opera */
+.right-pane::-webkit-scrollbar {
+    display: none;
+}
+
 h1, h2 {
     color: var(--heading-color);
     margin: 0;
