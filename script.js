@@ -2,6 +2,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('.right-pane section');
     const navLinks = document.querySelectorAll('.section-nav a');
     
+    // Handle cursor movement for gradient
+    document.addEventListener('mousemove', function(event) {
+        const x = event.clientX;
+        const y = event.clientY;
+        
+        document.documentElement.style.setProperty('--x', x + 'px');
+        document.documentElement.style.setProperty('--y', y + 'px');
+    });
+
     // Intersection Observer for section visibility
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
