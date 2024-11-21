@@ -39,7 +39,7 @@ body, html {
 
 .left-pane {
     width: 30%; /* Reduced from 35% */
-    padding: 40px;
+    padding: 60px;
     position: fixed;
     height: 100vh;
     overflow-y: auto;
@@ -50,7 +50,7 @@ body, html {
 .right-pane {
     width: calc(70% - 80px); /* Fixed calculation: 70% minus padding on both sides */
     margin-left: 30%; /* Match left-pane width */
-    padding: 40px;
+    padding: 60px;
     height: 100vh;
     overflow-y: auto;
     scroll-snap-type: y mandatory;
