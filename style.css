@@ -49,7 +49,7 @@ body, html {
 }
 
 .left-pane {
-    width: 300px; /* Fixed width instead of percentage */
+    width: calc(min(300px, 30%)); /* Fixed width instead of percentage */
     padding: 40px;
     position: fixed;
     height: calc(100vh - 80px);
@@ -72,8 +72,8 @@ body, html {
 
 
 .right-pane {
-    width: calc(100% - 380px);
-    margin-left: 380px;
+    width: calc(100% - min(380px, calc(30% + 80px)));
+    margin-left: calc(min(300px, 30%) + 40px);
     padding: 40px;
     height: 100vh;
     overflow-y: auto;
