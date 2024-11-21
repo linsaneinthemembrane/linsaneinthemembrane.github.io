@@ -100,15 +100,19 @@ body, html {
 }
 
 h1 {
-    font-weight: 700; /* Bold */
+    font-size: 3rem; /* Larger main heading */
+    font-weight: 700;
 }
 
 h2 {
-    font-weight: 500; /* Medium */
+    font-size: 2rem; /* Subheadings */
+    font-weight: 500;
 }
 
 p {
-    font-weight: 400; /* Regular */
+    font-size: 1.1rem; /* Slightly larger body text */
+    font-weight: 400;
+    line-height: 1.6; /* Better readability for paragraph text */
 }
 
 h1, h2 {
