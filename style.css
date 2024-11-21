@@ -47,16 +47,19 @@ body, html {
 }
 
 .left-pane {
-    width: 30%;
+    width: 300px; /* Fixed width instead of percentage */
     padding: 40px;
     position: fixed;
-    height: calc(100vh - 80px); /* Adjust height to account for padding */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow-wrap: break-word; /* Makes long text wrap */
+}
+
+.left-pane p {
+    max-width: 220px; /* Ensure text wraps within the pane */
     word-wrap: break-word;
-    overflow: hidden; /* Prevents content from overflowing */
+    overflow-wrap: break-word;
 }
 
 /* Add container for main content */
@@ -64,11 +67,6 @@ body, html {
     flex: 1;
 }
 
-.left-pane p {
-    max-width: 100%;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-}
 
 .right-pane {
     width: calc(70% - 80px);
@@ -211,6 +209,12 @@ h1, h2 {
 .skill-item i {
     font-size: 20px;
     color: var(--accent-color);
+}
+
+/* Ensure skill items don't get affected by left pane */
+.skill-item {
+    position: relative; /* Add this to ensure proper stacking context */
+    z-index: 1; /* Ensure skills are above the left pane */
 }
 
 /* Text styling */
