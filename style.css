@@ -1,6 +1,7 @@
 @import url("https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/");
 
 :root {
+    /*font-size: 18px; /* Increases base size from default 16px */
     --bg-color: #0f172a;
     --text-color: #94a3b8;
     --heading-color: #e2e8f0;
