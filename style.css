@@ -135,3 +135,37 @@ h1, h2 {
     height: 20px;
     fill: var(--bg-color);
 }
+
+.skill-category {
+    background-color: rgba(30, 41, 59, 0.5);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.skill-category h3 {
+    color: var(--heading-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-item {
+    background-color: rgba(94, 234, 212, 0.1);
+    border-radius: 25px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-color);
+}
+
+.skill-icon {
+    width: 20px;
+    height: 20px;
+}
