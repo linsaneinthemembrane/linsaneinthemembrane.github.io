@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/");
+
 :root {
     --bg-color: #0f172a;
     --text-color: #94a3b8;
@@ -50,7 +52,7 @@ body, html {
     width: 300px; /* Fixed width instead of percentage */
     padding: 40px;
     position: fixed;
-    height: 100vh;
+    height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -65,12 +67,13 @@ body, html {
 /* Add container for main content */
 .left-pane-content {
     flex: 1;
+    margin-bottom: auto
 }
 
 
 .right-pane {
-    width: calc(70% - 80px);
-    margin-left: 30%;
+    width: calc(100% - 380px);
+    margin-left: 380px;
     padding: 40px;
     height: 100vh;
     overflow-y: auto;
@@ -159,8 +162,6 @@ h1, h2 {
     padding-bottom: 40px;
     display: flex;
     gap: 15px;
-    position: relative; /* Add this to ensure proper stacking */
-    z-index: 2; /* Ensure icons stay above other elements */
 }
 
 .social-links a {
@@ -229,13 +230,10 @@ h1, h2 {
     justify-content: center; /* Add this */
     width: 20px; /* Add this */
     height: 20px; /* Add this */
+    font-style: normal;
 }
 
-/* Ensure skill items don't get affected by left pane */
-.skill-item {
-    position: relative; /* Add this to ensure proper stacking context */
-    z-index: 1; /* Ensure skills are above the left pane */
-}
+
 
 .skill-item span {
     color: var(--text-color);
