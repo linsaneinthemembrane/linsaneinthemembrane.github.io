@@ -43,10 +43,30 @@ nav ul li {
     margin-right: 1rem;
 }
 
-.social-links img {
-    width: 24px;
-    height: 24px;
-    margin-right: 1rem;
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--accent-color);
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: var(--bg-color);
 }
 
 .project {
