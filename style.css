@@ -52,15 +52,15 @@ body, html {
     height: 100vh;
     overflow-y: auto;
     scroll-snap-type: y mandatory;
+    /* Remove any align or justify properties that might be centering content */
 }
 
+/* Update the section styling to remove vertical centering */
 .right-pane section {
     height: 100vh;
     scroll-snap-align: start;
     padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    /* Remove display: flex and justify-content if present */
 }
 
 h1, h2 {
