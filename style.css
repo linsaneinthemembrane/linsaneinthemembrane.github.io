@@ -12,9 +12,6 @@ body, html {
     height: 100%;
     width: 100%;
     font-family: Arial, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
 }
 
 #gradient-background {
@@ -24,80 +21,63 @@ body, html {
     width: 100%;
     height: 100%;
     pointer-events: none; /* Ensure it doesn't block other interactions */
-    background-image: radial-gradient(circle 250px at var(--x) var(--y), rgba(94, 234, 212, 0.5), transparent);
-    transition: background-position 0.1s ease-out, background-size 0.1s ease-out;
+    background-image: radial-gradient(circle at var(--x) var(--y), rgba(94,234,212,0), transparent);
 }
 
-header, main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
+.container {
+    display: flex;
+    height: 100vh;
 }
 
-h1, h2, h3 {
+.left-pane {
+    width: 25%;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+.right-pane {
+    width: 75%;
+    overflow-y: auto;
+}
+
+.left-pane h1, .left-pane h2 {
     color: var(--heading-color);
 }
 
-a {
-    color: var(--accent-color);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-nav ul {
+.section-nav ul {
     list-style-type: none;
     padding: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 1rem;
+.section-nav li {
+    margin-bottom: 10px;
+}
+
+.section-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.section-nav a.active {
+    color: var(--accent-color); /* Highlight color */
 }
 
 .social-links {
     display: flex;
-    gap: 1rem;
+    gap: 10px;
 }
 
 .social-links a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background-color: var(--text-color);
-    transition: background-color 0.3s ease;
-}
-
-.social-links a:hover {
-    background-color: var(--accent-color);
 }
 
 .icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    fill: var(--bg-color);
-}
-
-.project {
-    margin-bottom: 2rem;
-}
-
-.technologies {
-    list-style-type: none;
-    padding: 0;
-}
-
-.technologies li {
-    display: inline-block;
-    background-color: rgba(94, 234, 212, 0.1);
-    color: var(--accent-color);
-    padding: 0.25rem 0.5rem;
-    border-radius: 9999px;
-    font-size: 0.875rem;
-    margin-right: 0.5rem;
+    width: 24px;
+    height: 24px;
 }
