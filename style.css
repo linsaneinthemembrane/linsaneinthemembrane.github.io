@@ -60,7 +60,7 @@ body, html {
 .right-pane section {
     height: 100vh;
     scroll-snap-align: start;
-    padding: 40px;
+    padding: 60px;
     /* Remove display: flex and justify-content if present */
 }
 
