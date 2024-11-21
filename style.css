@@ -5,13 +5,27 @@
     --accent-color: #5eead4;
 }
 
-body {
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
     font-family: Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
+}
+
+#gradient-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensure it doesn't block other interactions */
+    background-image: radial-gradient(circle at var(--x) var(--y), rgba(94, 234, 212, 0.5), transparent);
+    transition: background-position 0.1s ease-out, background-size 0.1s ease-out;
 }
 
 header, main {
@@ -86,5 +100,4 @@ nav ul li {
     border-radius: 9999px;
     font-size: 0.875rem;
     margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
 }
