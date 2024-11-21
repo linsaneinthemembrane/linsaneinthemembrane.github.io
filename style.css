@@ -43,9 +43,6 @@ body, html {
     position: fixed;
     height: 100vh;
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .right-pane {
@@ -113,7 +110,8 @@ h1, h2 {
 }
 
 .social-links {
-    margin-top: auto;
+    /*margin-top: 40px;*/
+    margin-bottom: 40px;
     display: flex;
     gap: 15px;
 }
