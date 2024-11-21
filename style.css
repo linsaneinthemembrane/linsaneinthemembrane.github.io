@@ -1,48 +1,14 @@
-:root {
-    --bg-color: #0f172a;
-    --text-color: #94a3b8;
-    --heading-color: #e2e8f0;
-    --accent-color: #5eead4;
-}
-
-body, html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    font-family: Arial, sans-serif;
-}
-
-#gradient-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Ensure it doesn't block other interactions */
-    background-image: radial-gradient(circle at var(--x) var(--y), rgba(94,234,212,0), transparent);
-}
-
-.container {
-    display: flex;
-    height: 100vh;
-}
-
 .left-pane {
     width: 25%;
     background-color: var(--bg-color);
     color: var(--text-color);
-    padding: 20px;
+    padding: 40px;  /* Increased padding */
+    position: fixed;
+    height: 100vh;
 }
 
-.right-pane {
-    width: 75%;
-    overflow-y: auto;
-}
-
-.left-pane h1, .left-pane h2 {
-    color: var(--heading-color);
+.section-nav {
+    margin-top: 40px;
 }
 
 .section-nav ul {
@@ -51,33 +17,76 @@ body, html {
 }
 
 .section-nav li {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .section-nav a {
     color: var(--text-color);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.section-nav a.active {
-    color: var(--accent-color); /* Highlight color */
+.section-nav a::before {
+    content: '';
+    width: 40px;  /* Default line width */
+    height: 1px;
+    background-color: var(--text-color);
+    margin-right: 10px;
+    transition: width 0.3s ease;
+}
+
+.section-nav a.active::before {
+    width: 80px;  /* Extended line width for active section */
+    background-color: var(--accent-color);
+}
+
+.right-pane {
+    width: 75%;
+    margin-left: 25%;
+    padding: 40px;
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+
+.right-pane section {
+    height: 100vh;
+    scroll-snap-align: start;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .social-links {
+    margin-top: 40px;
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
 .social-links a {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    background-color: var(--text-color);
+    transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--accent-color);
 }
 
 .icon {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
+    fill: var(--bg-color);
 }
