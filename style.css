@@ -45,7 +45,6 @@ body, html {
     overflow-y: auto;
     display: flex;  /* Add this */
     flex-direction: column;  /* Add this */
-    justify-content: space-between;  /* Add this */
 }
 
 .right-pane {
