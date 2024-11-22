@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Intersection Observer for section visibility
     const observerOptions = {
-        root: document.querySelector('.right-pane'),
+        root: null, // Use viewport as root on mobile
         threshold: 0.2,
         rootMargin: '-10% 0px -70% 0px'
     };
