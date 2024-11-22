@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Intersection Observer for section visibility
+    const observerOptions = {
+        root: document.querySelector('.right-pane'),
+        threshold: 0.2,
+        rootMargin: '-10% 0px -70% 0px'
+    };
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -24,21 +30,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
-    }, {
-        threshold: 0.5
-    });
+    }, observerOptions);
 
     sections.forEach(section => {
         observer.observe(section);
     });
 
-    // Smooth scrolling
+    // Smooth scrolling with offset
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            targetSection.scrollIntoView({ behavior: 'smooth' });
+            const offset = 40; // Adjust this value based on your layout
+            const targetPosition = targetSection.offsetTop - offset;
+            
+            document.querySelector('.right-pane').scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
         });
     });
 });
