@@ -370,3 +370,14 @@ p {
     color: var(--accent-color);
     font-size: 16px;
 }
+
+.external-link {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+.external-link::after {
+    content: '↗';
+    text-decoration: none;
+    margin-left: 4px;
+}
