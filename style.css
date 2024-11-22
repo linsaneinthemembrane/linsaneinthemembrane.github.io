@@ -329,6 +329,11 @@ p {
     transform: scale(1.02);
 }
 
+.project-description {
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
 .project-link {
     display: block;
     transition: transform 0.3s ease;
