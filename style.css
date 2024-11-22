@@ -378,6 +378,5 @@ p {
 
 .external-link::after {
     content: '↗';
-    text-decoration: none;
     margin-left: 4px;
 }
