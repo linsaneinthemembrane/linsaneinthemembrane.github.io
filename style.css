@@ -306,3 +306,67 @@ p {
 .skill-tag span {
     color: var(--text-color);
 }
+
+.experience-item {
+    background-color: rgba(30, 41, 59, 0.5);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(94, 234, 212, 0.1);
+}
+
+.experience-header {
+    margin-bottom: 16px;
+}
+
+.experience-title-group h3 {
+    color: var(--heading-color);
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.external-link {
+    color: var(--accent-color);
+    font-size: 0.9em;
+}
+
+.experience-subtitle {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.experience-description {
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tag {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background-color: rgba(94, 234, 212, 0.1);
+    border-radius: 25px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background-color: rgba(94, 234, 212, 0.2);
+    transform: translateY(-2px);
+}
+
+.skill-tag i {
+    color: var(--accent-color);
+    font-size: 16px;
+}
