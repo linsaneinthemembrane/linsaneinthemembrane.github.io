@@ -11,11 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.style.setProperty('--y', y + 'px');
     });
 
-    // Intersection Observer for section visibility
+    // Updated Intersection Observer options
     const observerOptions = {
-        root: null, // Use viewport as root on mobile
+        root: null, // Use viewport instead of right-pane
         threshold: 0.2,
-        rootMargin: '-10% 0px -70% 0px'
+        rootMargin: '-20% 0px -20% 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -36,16 +36,20 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 
-    // Smooth scrolling with offset
+    // Updated smooth scrolling
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            const offset = 40; // Adjust this value based on your layout
-            const targetPosition = targetSection.offsetTop - offset;
             
-            document.querySelector('.right-pane').scrollTo({
+            // Get the height of the sticky header in mobile view
+            const headerHeight = window.innerWidth <= 768 ? 
+                document.querySelector('.left-pane').offsetHeight : 0;
+                
+            const targetPosition = targetSection.offsetTop - headerHeight;
+
+            window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
             });
