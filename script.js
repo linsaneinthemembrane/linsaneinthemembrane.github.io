@@ -1,18 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('.right-pane section');
     const navLinks = document.querySelectorAll('.section-nav a');
+    const rightPane = document.querySelector('.right-pane');
     
     // Handle cursor movement for gradient
     document.addEventListener('mousemove', function(event) {
         const x = event.clientX;
         const y = event.clientY;
-        
         document.documentElement.style.setProperty('--x', x + 'px');
         document.documentElement.style.setProperty('--y', y + 'px');
     });
 
+    // Intersection Observer for section visibility
     const observerOptions = {
-        root: null, // Use viewport as root for both mobile and desktop
+        root: null,
         threshold: 0.2,
         rootMargin: '-20% 0px -20% 0px'
     };
@@ -25,11 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     link.classList.remove('active');
                     if (link.getAttribute('href') === `#${id}`) {
                         link.classList.add('active');
-                        // Update the line width for the active section
-                        const line = link.querySelector('::before');
-                        if (line) {
-                            line.style.width = '80px';
-                        }
                     }
                 });
             }
@@ -40,23 +36,30 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 
-    // Updated smooth scrolling
+    // Smooth scrolling with proper offset calculation
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
             const targetSection = document.querySelector(targetId);
+            const isMobile = window.innerWidth <= 768;
             
-            // Get the height of the sticky header in mobile view
-            const headerHeight = window.innerWidth <= 768 ? 
-                document.querySelector('.left-pane').offsetHeight : 0;
-                
-            const targetPosition = targetSection.offsetTop - headerHeight;
+            // Calculate offset based on viewport
+            const headerOffset = isMobile ? document.querySelector('.left-pane').offsetHeight : 0;
+            const elementPosition = targetSection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
+            if (isMobile) {
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            } else {
+                rightPane.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 });
