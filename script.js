@@ -11,13 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.style.setProperty('--y', y + 'px');
     });
 
-    // Updated Intersection Observer options
     const observerOptions = {
-        root: null, // Use viewport instead of right-pane
+        root: null, // Use viewport as root for both mobile and desktop
         threshold: 0.2,
         rootMargin: '-20% 0px -20% 0px'
     };
-
+    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -26,6 +25,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     link.classList.remove('active');
                     if (link.getAttribute('href') === `#${id}`) {
                         link.classList.add('active');
+                        // Update the line width for the active section
+                        const line = link.querySelector('::before');
+                        if (line) {
+                            line.style.width = '80px';
+                        }
                     }
                 });
             }
