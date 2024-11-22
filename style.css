@@ -213,22 +213,69 @@ p {
 }
 
 @media (max-width: 768px) {
+    body, html {
+        overflow: visible;
+    }
     .container {
         flex-direction: column;
         padding: 20px;
+        height: auto;
     }
     
     .left-pane {
-        position: relative;
+        position: sticky;
+        top: 0;
         width: 100%;
         height: auto;
         padding: 20px;
+        background-color: var(--bg-color);
+        z-index: 10;
+        border-bottom: 1px solid rgba(94, 234, 212, 0.1);
     }
     
+    .left-pane h1 {
+        font-size: 2rem;
+    }
+
+    .left-pane h2 {
+        font-size: 1.5rem;
+    }
+
+    .left-pane p {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .section-nav {
+        margin-top: 20px;
+    }
+
+    .section-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .section-nav li {
+        margin-bottom: 0;
+    }
+
     .right-pane {
         width: 100%;
         margin-left: 0;
         padding: 20px;
+        height: auto;
+        overflow: visible;
+    }
+
+    .right-pane section {
+        min-height: auto;
+        padding: 40px 0;
+    }
+
+    .social-links {
+        position: relative;
+        padding-bottom: 20px;
     }
 }
 
