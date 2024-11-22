@@ -1,7 +1,4 @@
-@import url("https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/");
-
 :root {
-    /*font-size: 18px; /* Increases base size from default 16px */
     --bg-color: #0f172a;
     --text-color: #94a3b8;
     --heading-color: #e2e8f0;
@@ -33,24 +30,18 @@ body, html {
     );
 }
 
-.main-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
 .container {
     display: flex;
     height: 100vh;
     position: relative;
     z-index: 1;
-    max-width: 1200px; /* Adjust this value to control overall width */
-    margin: 0 auto; /* Centers the container */
-    padding: 0 40px; /* Add padding on sides */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
 .left-pane {
-    width: calc(min(300px, 30%)); /* Fixed width instead of percentage */
+    width: calc(min(300px, 30%));
     padding: 40px;
     position: fixed;
     height: calc(100vh - 80px);
@@ -59,18 +50,9 @@ body, html {
     justify-content: space-between;
 }
 
-.left-pane p {
-    max-width: 220px; /* Ensure text wraps within the pane */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-/* Add container for main content */
 .left-pane-content {
     flex: 1;
-    margin-bottom: auto
 }
-
 
 .right-pane {
     width: calc(100% - min(380px, calc(30% + 80px)));
@@ -79,46 +61,39 @@ body, html {
     height: 100vh;
     overflow-y: auto;
     scroll-snap-type: y mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-/* Update the section styling to remove vertical centering */
-.right-pane section {
-    height: 100vh;
-    scroll-snap-align: start;
-    padding: 60px;
-    /* Remove display: flex and justify-content if present */
-}
-
-.right-pane {
-    /* ... existing styles ... */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-
-/* Chrome, Safari and Opera */
 .right-pane::-webkit-scrollbar {
     display: none;
 }
 
+.right-pane section {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    padding: 40px 0;
+}
+
 h1 {
-    font-size: 3rem; /* Larger main heading */
+    font-size: 3rem;
     font-weight: 700;
+    color: var(--heading-color);
+    margin: 0;
 }
 
 h2 {
-    font-size: 2rem; /* Subheadings */
+    font-size: 2rem;
     font-weight: 500;
+    color: var(--heading-color);
+    margin: 0;
 }
 
 p {
-    font-size: 1.1rem; /* Slightly larger body text */
+    font-size: 1.1rem;
     font-weight: 400;
-    line-height: 1.6; /* Better readability for paragraph text */
-}
-
-h1, h2 {
-    color: var(--heading-color);
-    margin: 0;
+    line-height: 1.6;
+    max-width: 65ch;
 }
 
 .section-nav {
@@ -190,7 +165,6 @@ h1, h2 {
     fill: var(--bg-color);
 }
 
-/* Style for the entire skill category box */
 .skill-category {
     background-color: rgba(30, 41, 59, 0.5);
     border-radius: 12px;
@@ -199,7 +173,6 @@ h1, h2 {
     border: 1px solid rgba(94, 234, 212, 0.1);
 }
 
-/* Grid container for skills */
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
@@ -207,7 +180,6 @@ h1, h2 {
     margin-top: 15px;
 }
 
-/* Individual skill item styling */
 .skill-item {
     background-color: rgba(94, 234, 212, 0.1);
     border-radius: 25px;
@@ -217,11 +189,8 @@ h1, h2 {
     gap: 8px;
     transition: all 0.3s ease;
     cursor: default;
-    position: relative; /* Add this */
-    z-index: 1; /* Add this */
 }
 
-/* Hover effect for skill items */
 .skill-item:hover {
     background-color: rgba(94, 234, 212, 0.2);
     transform: translateY(-2px);
@@ -230,25 +199,35 @@ h1, h2 {
 .skill-item i {
     font-size: 20px;
     color: var(--accent-color);
-    display: inline-flex; /* Add this */
-    align-items: center; /* Add this */
-    justify-content: center; /* Add this */
-    width: 20px; /* Add this */
-    height: 20px; /* Add this */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
     font-style: normal;
 }
-
-
 
 .skill-item span {
     color: var(--text-color);
     font-size: 14px;
-    font-family: "League Spartan", Arial, sans-serif;
 }
 
-/* Category heading */
-.skill-category h3 {
-    color: var(--heading-color);
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .left-pane {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+    
+    .right-pane {
+        width: 100%;
+        margin-left: 0;
+        padding: 20px;
+    }
 }
