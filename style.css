@@ -287,11 +287,22 @@ p {
     gap: 6px;
     padding: 6px 12px;
     background-color: rgba(94, 234, 212, 0.1);
-    border-radius: 20px;
+    border-radius: 25px;
     font-size: 14px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-tag:hover {
+    background-color: rgba(94, 234, 212, 0.2);
+    transform: translateY(-2px);
 }
 
 .skill-tag i {
     color: var(--accent-color);
     font-size: 16px;
+}
+
+.skill-tag span {
+    color: var(--text-color);
 }
