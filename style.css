@@ -15,7 +15,6 @@ body, html {
     background-color: var(--bg-color);
     color: var(--text-color);
     overflow: hidden;
-    scroll-behavior: smooth;
 }
 
 /* Typography */
@@ -65,8 +64,6 @@ p {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
 }
 
 /* Left Pane */
@@ -132,10 +129,13 @@ p {
     margin-left: calc(min(300px, 30%) + 40px);
     padding: 40px;
     height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
+/* hide scrollbar */
 .right-pane::-webkit-scrollbar {
     display: none;
 }
