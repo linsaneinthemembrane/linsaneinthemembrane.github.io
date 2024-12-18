@@ -153,7 +153,13 @@ p {
 .right-pane section {
     min-height: 100vh;
     scroll-snap-align: start;
-    padding: 40px 0;
+    padding: 0;
+    position: relative;
+}
+
+.right-pane section h2 {
+    margin-bottom: 24px; 
+    padding-top: 24px; 
 }
 
 .right-pane section > *:last-child {
