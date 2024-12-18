@@ -107,6 +107,10 @@ p {
     padding: 0;
 }
 
+section br {
+    display: none;
+}
+
 .section-nav li {
     margin-bottom: 20px;
 }
@@ -128,6 +132,10 @@ p {
     background-color: var(--text-color);
     margin-right: 10px;
     transition: all 0.3s ease;
+}
+
+section h2 {
+    margin-bottom: 40px; 
 }
 
 .section-nav a.active {
@@ -281,12 +289,17 @@ p {
     }
 }
 
-.project-card {
+.project-card, .experience-item {
     background-color: rgba(30, 41, 59, 0.5);
     border-radius: 12px;
-    padding: 24px;
+    padding: 20px 24px;
     margin-bottom: 24px;
     border: 1px solid rgba(94, 234, 212, 0.1);
+}
+
+.project-card h3, .experience-item h3 {
+    margin-top: 0; /* Remove top margin */
+    margin-bottom: 20px; /* Add consistent spacing below heading */
 }
 
 .project-preview {
