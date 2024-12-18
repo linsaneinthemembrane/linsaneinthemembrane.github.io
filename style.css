@@ -195,7 +195,7 @@ p {
 
 .preview-overlay span {
     color: var(--accent-color);
-    font-size: 1.1rem;
+    font-size: 2rem;
     font-weight: 500;
 }
 
@@ -308,15 +308,15 @@ p {
     }
 
     .left-pane h1 {
-        font-size: 2rem;
+        font-size: 4rem;
     }
 
     .left-pane h2 {
-        font-size: 1.5rem;
+        font-size: 3rem;
     }
 
     .left-pane p {
-        font-size: 1rem;
+        font-size: 2rem;
         max-width: 100%;
     }
 
