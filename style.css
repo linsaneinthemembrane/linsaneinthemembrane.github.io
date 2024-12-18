@@ -77,7 +77,12 @@ body, html {
     margin-bottom: 25vh;
 }
 
-.right-pane section:last-child {
+.right-pane section > *:last-child {
+    margin-bottom: 40vh;
+
+}
+
+.right-pane section:last-child > *:last-child {
     margin-bottom: 0;
 }
 
