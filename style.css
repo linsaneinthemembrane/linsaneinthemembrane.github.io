@@ -70,8 +70,9 @@ p {
     height: 100vh;
     position: relative;
     z-index: 1;
-    max-width: none;
-    padding: 0 0 0 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
 /* Left Pane */
@@ -135,7 +136,7 @@ p {
 .right-pane {
     width: calc(100% - min(380px, calc(30% + 80px)));
     margin-left: calc(min(300px, 30%) + 40px);
-    padding: 40px 40px 40px 0;
+    padding: 40px;
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
