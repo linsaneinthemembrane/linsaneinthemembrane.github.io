@@ -70,9 +70,10 @@ body, html {
 }
 
 .right-pane section {
-    min-height: 100vh;
+    min-height: auto;
     scroll-snap-align: start;
     padding: 40px 0;
+    margin-bottom: 40px;
 }
 
 h1 {
