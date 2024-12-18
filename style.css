@@ -43,7 +43,7 @@ p {
 
 /* Layout */
 #gradient-background {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -133,6 +133,7 @@ p {
     scroll-snap-type: y mandatory;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    pointer-events: all;
 }
 
 /* hide scrollbar */
