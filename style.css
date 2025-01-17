@@ -173,16 +173,15 @@ p {
     scroll-snap-align: start;
     padding: 0;
     position: relative;
-    scroll-margin-bottom: 40vh;
 }
 
 .right-pane section h2 {
-    padding: 40px 0 20px 0;
+    padding: 20px 0;
     margin-bottom: 24px;
 }
 
 .right-pane section > *:last-child {
-    margin-bottom: 80vh;
+    margin-bottom: 40vh;
 }
 
 .right-pane section:last-child > *:last-child {
@@ -196,8 +195,6 @@ p {
     padding: 16px 24px;
     margin-bottom: 16px;
     border: 1px solid rgba(94, 234, 212, 0.1);
-    position: relative;
-    z-index: 1;
 }
 
 /* Project Preview */
