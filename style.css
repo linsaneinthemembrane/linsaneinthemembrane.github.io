@@ -240,6 +240,22 @@ p {
     transform: scale(1.02);
 }
 
+.experience-title-group h3 {
+    margin-bottom: 12px; /* Add space between title and date */
+}
+
+.experience-subtitle {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 16px; /* Add space between date and description */
+}
+
+.experience-description {
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
 /* Skills and Tags */
 .skills-grid, .project-skills, .skill-tags {
     display: flex;
