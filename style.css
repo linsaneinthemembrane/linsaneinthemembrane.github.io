@@ -69,6 +69,18 @@ p {
     padding-top: 40px !important; /* Aligns with the name on left */
 }
 
+#skills {
+    padding-top: 40px !important; /* Aligns with the name on left */
+}
+
+#projects {
+    padding-top: 40px !important; /* Aligns with the name on left */
+}
+
+#experience {
+    padding-top: 40px !important; /* Aligns with the name on left */
+}
+
 .container {
     display: flex;
     height: 100vh;
