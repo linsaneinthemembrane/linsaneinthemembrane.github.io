@@ -65,6 +65,10 @@ p {
     );
 }
 
+#about {
+    padding-top: 40px !important; /* Aligns with the name on left */
+}
+
 .container {
     display: flex;
     height: 100vh;
@@ -156,6 +160,7 @@ p {
     scroll-snap-align: start;
     padding: 0;
     position: relative;
+    scroll-margin-bottom: 25 vh;
 }
 
 .right-pane section h2 {
@@ -164,11 +169,7 @@ p {
 }
 
 .right-pane section > *:last-child {
-    margin-bottom: 40vh;
-}
-
-.right-pane section:last-child > *:last-child {
-    margin-bottom: 0;
+    margin-bottom: 60vh;
 }
 
 /* Cards (Projects, Experience, Skills) */
