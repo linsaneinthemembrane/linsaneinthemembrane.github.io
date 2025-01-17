@@ -172,7 +172,7 @@ p {
     scroll-snap-align: start;
     padding: 0;
     position: relative;
-    scroll-margin-bottom: 25 vh;
+    scroll-margin-bottom: 40 vh;
 }
 
 .right-pane section h2 {
@@ -181,7 +181,11 @@ p {
 }
 
 .right-pane section > *:last-child {
-    margin-bottom: 60vh;
+    margin-bottom: 80vh;
+}
+
+.right-pane section:last-child > *:last-child {
+    margin-bottom: 0; /* Keep last section without extra margin */
 }
 
 /* Cards (Projects, Experience, Skills) */
