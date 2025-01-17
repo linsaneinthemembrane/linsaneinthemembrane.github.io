@@ -178,7 +178,6 @@ p {
 .right-pane section h2 {
     position: sticky;
     top: 40px;
-    background-color: var(--bg-color);
     z-index: 2;
     padding: 20px 0;
 }
