@@ -172,7 +172,6 @@ p {
     scroll-snap-align: start;
     padding: 0;
     position: relative;
-    scroll-margin-bottom: 40 vh;
 }
 
 .right-pane section h2 {
@@ -180,6 +179,7 @@ p {
     top: 40px;
     z-index: 2;
     padding: 20px 0;
+    margin-bottom: 24px;
 }
 
 .right-pane section > *:last-child {
@@ -188,15 +188,6 @@ p {
 
 .right-pane section:last-child > *:last-child {
     margin-bottom: 0; /* Keep last section without extra margin */
-}
-
-.project-card {
-    min-height: 100vh;
-    scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-    padding: 24px;
-    margin-bottom: 0; /* Remove default margin */
 }
 
 /* Cards (Projects, Experience, Skills) */
