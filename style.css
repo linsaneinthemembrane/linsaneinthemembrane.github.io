@@ -155,7 +155,7 @@ p {
     padding: 40px;
     height: 100vh;
     overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     -ms-overflow-style: none;
     scrollbar-width: none;
     pointer-events: all;
@@ -176,8 +176,11 @@ p {
 }
 
 .right-pane section h2 {
-    margin-bottom: 24px; 
-    padding-top: 24px; 
+    position: sticky;
+    top: 40px;
+    background-color: var(--bg-color);
+    z-index: 2;
+    padding: 20px 0;
 }
 
 .right-pane section > *:last-child {
@@ -186,6 +189,15 @@ p {
 
 .right-pane section:last-child > *:last-child {
     margin-bottom: 0; /* Keep last section without extra margin */
+}
+
+.project-card {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    margin-bottom: 0; /* Remove default margin */
 }
 
 /* Cards (Projects, Experience, Skills) */
@@ -202,7 +214,7 @@ p {
     position: relative;
     border-radius: 8px;
     overflow: hidden;
-    margin: 20px 0;
+    margin: 24px 0;
 }
 
 .project-preview img {
