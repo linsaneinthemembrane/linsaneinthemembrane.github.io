@@ -160,6 +160,7 @@ p {
     scrollbar-width: none;
     pointer-events: all;
     position: relative;
+    z-index: 1;
 }
 
 /* hide scrollbar */
@@ -172,6 +173,7 @@ p {
     scroll-snap-align: start;
     padding: 0;
     position: relative;
+    scroll-margin-bottom: 40vh;
 }
 
 .right-pane section h2 {
@@ -197,6 +199,8 @@ p {
     padding: 16px 24px;
     margin-bottom: 16px;
     border: 1px solid rgba(94, 234, 212, 0.1);
+    position: relative;
+    z-index: 1;
 }
 
 /* Project Preview */
