@@ -173,7 +173,7 @@ p {
     scroll-snap-align: start;
     padding: 0;
     position: relative;
-    scroll-margin-bottom: 10vh;
+    scroll-margin-bottom: 80vh;
 }
 
 .right-pane section h2 {
