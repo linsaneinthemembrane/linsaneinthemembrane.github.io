@@ -155,7 +155,7 @@ p {
     padding: 40px;
     height: 100vh;
     overflow-y: scroll;
-    scroll-snap-type: y manditory;
+    scroll-snap-type: y proximity;
     -ms-overflow-style: none;
     scrollbar-width: none;
     pointer-events: all;
