@@ -183,7 +183,7 @@ p {
 }
 
 .right-pane section > *:last-child {
-    margin-bottom: 10vh;
+    margin-bottom: 15vh;
 }
 
 .right-pane section:last-child > *:last-child {
