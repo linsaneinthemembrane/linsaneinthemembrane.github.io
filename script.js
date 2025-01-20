@@ -3,6 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.section-nav a');
     const rightPane = document.querySelector('.right-pane');
     
+    // Add wheel event listener to enable global scrolling
+    document.addEventListener('wheel', function(event) {
+        event.preventDefault();
+        const delta = event.deltaY;
+        rightPane.scrollTop += delta;
+    }, { passive: false });
+
     // Handle cursor movement for gradient
     document.addEventListener('mousemove', function(event) {
         const x = event.clientX;
