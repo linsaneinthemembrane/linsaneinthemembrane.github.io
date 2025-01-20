@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.skill-category').forEach((el) => animationObserver.observe(el));
+    document.querySelectorAll('.skill-category, .project-card, .experience-item').forEach((el) => animationObserver.observe(el));
 
     // Smooth scrolling with proper offset calculation
     navLinks.forEach(link => {
