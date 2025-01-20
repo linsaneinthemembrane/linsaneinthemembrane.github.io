@@ -36,6 +36,17 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 
+    // Animation Observer for skill categories
+    const animationObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.skill-category').forEach((el) => animationObserver.observe(el));
+
     // Smooth scrolling with proper offset calculation
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
