@@ -155,12 +155,13 @@ p {
     padding: 40px;
     height: 100vh;
     overflow-y: scroll;
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
     -ms-overflow-style: none;
     scrollbar-width: none;
     pointer-events: all;
     position: relative;
     z-index: 1;
+    scroll-behavior: smooth;
 }
 
 /* hide scrollbar */
@@ -173,7 +174,7 @@ p {
     scroll-snap-align: start;
     padding: 0;
     position: relative;
-    scroll-margin-bottom: 20vh;
+    scroll-margin-bottom: 10vh;
 }
 
 .right-pane section h2 {
@@ -182,7 +183,7 @@ p {
 }
 
 .right-pane section > *:last-child {
-    margin-bottom: 40vh;
+    margin-bottom: 20vh;
 }
 
 .right-pane section:last-child > *:last-child {
