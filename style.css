@@ -174,7 +174,7 @@ p {
     scroll-snap-align: start;
     padding: 0;
     position: relative;
-    scroll-margin-bottom: 0vh;
+    scroll-margin-bottom: 10vh;
 }
 
 .right-pane section h2 {
@@ -183,7 +183,7 @@ p {
 }
 
 .right-pane section > *:last-child {
-    margin-bottom: 5vh;
+    margin-bottom: 10vh;
 }
 
 .right-pane section:last-child > *:last-child {
