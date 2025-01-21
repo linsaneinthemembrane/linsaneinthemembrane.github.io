@@ -1,5 +1,5 @@
 # Portfolio Website
-## A modern, responsive portfolio website showcasing my data science projects and professional experience.
+## A modern portfolio website showcasing my data science projects and professional experience.
 ### Learning Objectives
 #### Frontend Development
 * Implemented responsive design using CSS flexbox and media queries
