@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('wheel', function(event) {
         if (!event.target.closest('.right-pane')) {
             event.preventDefault();
-            rightPane.scrollTop += event.deltaY;
+            const scrollSpeed = 1.0
+            rightPane.scrollTop += event.deltaY * scrollSpeed;
         }
     }, { passive: false });
 
