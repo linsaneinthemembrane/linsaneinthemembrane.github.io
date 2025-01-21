@@ -3,13 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.section-nav a');
     const rightPane = document.querySelector('.right-pane');
     
-    // Add wheel event listener to enable global scrolling
-    document.addEventListener('wheel', function(event) {
-        event.preventDefault();
-        const delta = event.deltaY;
-        rightPane.scrollTop += delta;
-    }, { passive: false });
-
     // Handle cursor movement for gradient
     document.addEventListener('mousemove', function(event) {
         const x = event.clientX;
@@ -18,9 +11,17 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.style.setProperty('--y', y + 'px');
     });
 
+    // Enable global scrolling
+    document.addEventListener('wheel', function(event) {
+        if (!event.target.closest('.right-pane')) {
+            event.preventDefault();
+            rightPane.scrollTop += event.deltaY;
+        }
+    }, { passive: false });
+
     // Intersection Observer for section visibility
     const observerOptions = {
-        root: null,
+        root: rightPane,
         threshold: 0.2,
         rootMargin: '-20% 0px -20% 0px'
     };
@@ -43,18 +44,21 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 
-    // Animation Observer for skill categories
+    // Animation Observer for cards
     const animationObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
             }
         });
-    }, { threshold: 0.1 });
+    }, { 
+        root: rightPane,
+        threshold: 0.1 
+    });
 
     document.querySelectorAll('.skill-category, .project-card, .experience-item').forEach((el) => animationObserver.observe(el));
 
-    // Smooth scrolling with proper offset calculation
+    // Keep existing smooth scrolling code
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -62,12 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.querySelector(targetId);
             const isMobile = window.innerWidth <= 768;
             
-            // Calculate offset based on viewport
-            const headerOffset = isMobile ? document.querySelector('.left-pane').offsetHeight : 0;
-            const elementPosition = targetSection.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
             if (isMobile) {
+                const headerOffset = document.querySelector('.left-pane').offsetHeight;
+                const elementPosition = targetSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
                 window.scrollTo({
                     top: offsetPosition,
                     behavior: 'smooth'
