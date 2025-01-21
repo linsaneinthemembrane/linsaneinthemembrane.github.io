@@ -11,6 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.style.setProperty('--y', y + 'px');
     });
 
+    // Add global scroll handling
+    document.addEventListener('wheel', function(event) {
+        if (!event.target.closest('.right-pane')) {
+            event.preventDefault();
+            rightPane.scrollTop += event.deltaY;
+        }
+    }, { passive: false });
+
     // Intersection Observer for section visibility
     const observerOptions = {
         root: rightPane,
