@@ -414,3 +414,26 @@ p {
         padding-bottom: 20px;
     }
 }
+
+.resume-button {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.resume-link {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: rgba(94, 234, 212, 0.1);
+    border-radius: 25px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all var(--transition-duration) ease;
+    border: 1px solid rgba(94, 234, 212, 0.1);
+}
+
+.resume-link:hover {
+    background-color: rgba(94, 234, 212, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(94, 234, 212, 0.1);
+}
