@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Select all sections and navigation links
     const sections = document.querySelectorAll('.right-pane section');
     const navLinks = document.querySelectorAll('.section-nav a');
     const rightPane = document.querySelector('.right-pane');
-    
+
     // Handle cursor movement for gradient
     document.addEventListener('mousemove', function(event) {
         const x = event.clientX;
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         threshold: 0.2,
         rootMargin: '-20% 0px -20% 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -59,19 +60,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.skill-category, .project-card, .experience-item').forEach((el) => animationObserver.observe(el));
 
-    // Keep existing smooth scrolling code
+    // smooth-scrolling
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
             const targetSection = document.querySelector(targetId);
             const isMobile = window.innerWidth <= 768;
-            
+
             if (isMobile) {
                 const headerOffset = document.querySelector('.left-pane').offsetHeight;
                 const elementPosition = targetSection.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                
+
                 window.scrollTo({
                     top: offsetPosition,
                     behavior: 'smooth'
