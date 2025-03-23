@@ -14,6 +14,16 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.style.setProperty('--y', y + 'px');
     });
 
+    // Function to update active navigation link
+    function updateActiveNavLink(sectionId) {
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${sectionId}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+
     // Add click handler for header title
     headerTitle.addEventListener('click', () => {
         const aboutSection = document.querySelector('#about');
@@ -40,6 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (header) {
             header.style.cursor = 'pointer';
             header.addEventListener('click', () => {
+                const sectionId = section.getAttribute('id');
+                updateActiveNavLink(sectionId);
+                
                 if (isMobile) {
                     const headerOffset = document.querySelector('.left-pane').offsetHeight;
                     const elementPosition = section.getBoundingClientRect().top;
@@ -79,12 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    }
-                });
+                updateActiveNavLink(id);
             }
         });
     }, observerOptions);
