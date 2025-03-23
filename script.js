@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isMobile) {
                 const headerOffset = document.querySelector('.left-pane').offsetHeight;
                 const elementPosition = targetSection.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
                 window.scrollTo({
                     top: offsetPosition,
