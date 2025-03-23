@@ -34,6 +34,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Add click handlers for section headers
+    sections.forEach(section => {
+        const header = section.querySelector('h2');
+        if (header) {
+            header.style.cursor = 'pointer';
+            header.addEventListener('click', () => {
+                if (isMobile) {
+                    const headerOffset = document.querySelector('.left-pane').offsetHeight;
+                    const elementPosition = section.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    rightPane.scrollTo({
+                        top: section.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
+    });
+
     // Add global scroll handling
     document.addEventListener('wheel', function(event) {
         if (!event.target.closest('.right-pane')) {

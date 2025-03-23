@@ -189,6 +189,12 @@ p {
 .right-pane section h2 {
     padding: 20px 0;
     margin-bottom: 24px;
+    cursor: pointer;
+    transition: color var(--transition-duration) ease;
+}
+
+.right-pane section h2:hover {
+    color: var(--accent-color);
 }
 
 .right-pane section > *:last-child {
