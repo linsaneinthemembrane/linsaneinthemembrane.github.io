@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.section-nav a');
     const rightPane = document.querySelector('.right-pane');
     const isMobile = window.innerWidth <= 768;
+    const headerTitle = document.querySelector('.left-pane h1');
 
     // Handle cursor movement for gradient
     document.addEventListener('mousemove', function(event) {
@@ -11,6 +12,26 @@ document.addEventListener('DOMContentLoaded', function() {
         const y = event.clientY;
         document.documentElement.style.setProperty('--x', x + 'px');
         document.documentElement.style.setProperty('--y', y + 'px');
+    });
+
+    // Add click handler for header title
+    headerTitle.addEventListener('click', () => {
+        const aboutSection = document.querySelector('#about');
+        if (isMobile) {
+            const headerOffset = document.querySelector('.left-pane').offsetHeight;
+            const elementPosition = aboutSection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        } else {
+            rightPane.scrollTo({
+                top: aboutSection.offsetTop,
+                behavior: 'smooth'
+            });
+        }
     });
 
     // Add global scroll handling

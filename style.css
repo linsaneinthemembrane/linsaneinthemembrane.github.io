@@ -30,6 +30,12 @@ h1 {
     font-weight: 700;
     color: var(--heading-color);
     margin: 0;
+    cursor: pointer;
+    transition: color var(--transition-duration) ease;
+}
+
+h1:hover {
+    color: var(--accent-color);
 }
 
 h2 {
