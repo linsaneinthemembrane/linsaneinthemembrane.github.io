@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('.right-pane section');
     const navLinks = document.querySelectorAll('.section-nav a');
     const rightPane = document.querySelector('.right-pane');
+    const isMobile = window.innerWidth <= 768;
 
     // Handle cursor movement for gradient
     document.addEventListener('mousemove', function(event) {
@@ -16,16 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('wheel', function(event) {
         if (!event.target.closest('.right-pane')) {
             event.preventDefault();
-            const scrollSpeed = 1.0
+            const scrollSpeed = 1.0;
             rightPane.scrollTop += event.deltaY * scrollSpeed;
         }
     }, { passive: false });
 
     // Intersection Observer for section visibility
     const observerOptions = {
-        root: rightPane,
+        root: isMobile ? null : rightPane,
         threshold: 0.1,
-        rootMargin: '-10% 0px -10% 0px'
+        rootMargin: isMobile ? '-20% 0px -20% 0px' : '-10% 0px -10% 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, { 
-        root: rightPane,
+        root: isMobile ? null : rightPane,
         threshold: 0.1 
     });
 
@@ -66,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const targetId = link.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            const isMobile = window.innerWidth <= 768;
 
             if (isMobile) {
                 const headerOffset = document.querySelector('.left-pane').offsetHeight;

@@ -354,36 +354,37 @@ p {
 /* Mobile Styles */
 @media (max-width: 768px) {
     body, html {
-        overflow: visible;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 
     .container {
         flex-direction: column;
-        padding: 20px;
+        padding: 0;
         height: auto;
     }
 
     .left-pane {
-        position: sticky;
-        top: 0;
         width: 100%;
         height: auto;
+        position: relative;
         padding: 20px;
-        background-color: var(--bg-color);
-        z-index: 10;
+        background-color: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         border-bottom: 1px solid rgba(94, 234, 212, 0.1);
     }
 
     .left-pane h1 {
-        font-size: 2.25rem;
+        font-size: 2.5rem;
     }
 
     .left-pane h2 {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 
     .left-pane p {
-        font-size: 1.1rem;
+        font-size: 1rem;
         max-width: 100%;
     }
 
@@ -395,10 +396,23 @@ p {
         display: flex;
         flex-wrap: wrap;
         gap: 15px;
+        justify-content: center;
     }
 
     .section-nav li {
-        margin-bottom: 0;
+        margin: 0;
+    }
+
+    .section-nav a {
+        font-size: 14px;
+    }
+
+    .section-nav a::before {
+        width: 20px;
+    }
+
+    .section-nav a.active::before {
+        width: 40px;
     }
 
     .right-pane {
@@ -406,12 +420,53 @@ p {
         margin-left: 0;
         padding: 20px;
         height: auto;
-        overflow: visible;
+        overflow-y: visible;
+        scroll-snap-type: none;
+    }
+
+    .right-pane section {
+        min-height: auto;
+        scroll-snap-align: none;
+        padding: 40px 0;
     }
 
     .social-links {
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    #gradient-background {
+        z-index: 0;
+    }
+
+    .left-pane, .right-pane {
         position: relative;
-        padding-bottom: 20px;
+        z-index: 1;
+    }
+
+    .project-card, .experience-item, .skill-category {
+        margin-bottom: 20px;
+    }
+
+    .resume-button {
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    .resume-link {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: rgba(94, 234, 212, 0.1);
+        border: 1px solid var(--accent-color);
+        border-radius: 6px;
+        color: var(--accent-color);
+        text-decoration: none;
+        font-size: 1rem;
+        transition: all var(--transition-duration) ease;
+    }
+
+    .resume-link:hover {
+        background-color: rgba(94, 234, 212, 0.2);
     }
 }
 
