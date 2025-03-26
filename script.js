@@ -139,4 +139,39 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // View More Projects functionality
+    const viewMoreButton = document.getElementById('view-more-projects');
+    const hiddenProjects = document.getElementById('hidden-projects');
+
+    if (viewMoreButton && hiddenProjects) {
+        viewMoreButton.addEventListener('click', function() {
+            if (hiddenProjects.style.display === 'none') {
+                hiddenProjects.style.display = 'block';
+                viewMoreButton.textContent = 'View Less';
+            } else {
+                hiddenProjects.style.display = 'none';
+                viewMoreButton.textContent = 'View More Projects';
+                // Scroll to the projects section
+                const projectsSection = document.getElementById('projects');
+                if (projectsSection) {
+                    if (isMobile) {
+                        const headerOffset = document.querySelector('.left-pane').offsetHeight;
+                        const elementPosition = projectsSection.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        rightPane.scrollTo({
+                            top: projectsSection.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            }
+        });
+    }
 });
