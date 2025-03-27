@@ -185,7 +185,7 @@ const isMobile = window.innerWidth <= 768;
 // Show button when user scrolls down
 function toggleBackToTopButton() {
     if (isMobile) {
-        if (window.scrollY > 300) {
+        if (window.pageYOffset > 300) {
             backToTopButton.classList.add('visible');
         } else {
             backToTopButton.classList.remove('visible');
@@ -221,5 +221,25 @@ if (isMobile) {
     rightPane.addEventListener('scroll', toggleBackToTopButton);
 }
 
-// Initialize button visibility
+// Initialize button visibility on page load
 toggleBackToTopButton();
+
+// Re-check on window resize
+window.addEventListener('resize', function() {
+    const newIsMobile = window.innerWidth <= 768;
+    if (newIsMobile !== isMobile) {
+        // Update isMobile value
+        isMobile = newIsMobile;
+        
+        // Remove previous event listeners
+        window.removeEventListener('scroll', toggleBackToTopButton);
+        rightPane.removeEventListener('scroll', toggleBackToTopButton);
+        
+        // Add appropriate event listener
+        if (isMobile) {
+            window.addEventListener('scroll', toggleBackToTopButton);
+        } else {
+            rightPane.addEventListener('scroll', toggleBackToTopButton);
+        }
+    }
+});

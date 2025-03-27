@@ -549,11 +549,19 @@ p {
     z-index: 1000;
 }
 
-.back-to-top-button:hover {
-    background-color: rgba(94, 234, 212, 0.2);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(94, 234, 212, 0.1);
+.back-to-top-button.visible {
+    display: block;
 }
+
+@media (max-width: 768px) {
+    .back-to-top-button {
+        bottom: 10px;
+        right: 10px;
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
 
 .back-to-top-button.visible {
     display: block;
