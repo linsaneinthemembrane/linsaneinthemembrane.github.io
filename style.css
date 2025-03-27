@@ -547,6 +547,10 @@ p {
     border: 1px solid rgba(94, 234, 212, 0.1);
     cursor: pointer;
     z-index: 1000;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    z-index: 9999;
 }
 
 .back-to-top-button.visible {
@@ -555,10 +559,11 @@ p {
 
 @media (max-width: 768px) {
     .back-to-top-button {
-        bottom: 10px;
-        right: 10px;
-        padding: 10px 20px;
-        font-size: 1rem;
+        position: sticky;
+        position: -webkit-sticky;
+        bottom: 20px;
+        margin-left: auto;
+        margin-right: 20px;
     }
 }
 
