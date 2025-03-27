@@ -175,3 +175,51 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+// Back to Top button functionality
+const backToTopButton = document.getElementById('back-to-top');
+const rightPane = document.querySelector('.right-pane');
+const isMobile = window.innerWidth <= 768;
+
+// Show button when user scrolls down
+function toggleBackToTopButton() {
+    if (isMobile) {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    } else {
+        if (rightPane.scrollTop > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    }
+}
+
+// Scroll to top when button is clicked
+backToTopButton.addEventListener('click', function() {
+    if (isMobile) {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    } else {
+        rightPane.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+});
+
+// Add scroll event listeners
+if (isMobile) {
+    window.addEventListener('scroll', toggleBackToTopButton);
+} else {
+    rightPane.addEventListener('scroll', toggleBackToTopButton);
+}
+
+// Initialize button visibility
+toggleBackToTopButton();

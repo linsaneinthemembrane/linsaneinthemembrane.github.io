@@ -530,3 +530,31 @@ p {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(94, 234, 212, 0.1);
 }
+
+.back-to-top-button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    background-color: rgba(94, 234, 212, 0.1);
+    border-radius: 25px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: "League Spartan", Arial, sans-serif;
+    transition: all var(--transition-duration) ease;
+    border: 1px solid rgba(94, 234, 212, 0.1);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.back-to-top-button:hover {
+    background-color: rgba(94, 234, 212, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(94, 234, 212, 0.1);
+}
+
+.back-to-top-button.visible {
+    display: block;
+}
