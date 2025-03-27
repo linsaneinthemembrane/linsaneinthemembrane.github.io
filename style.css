@@ -508,6 +508,8 @@ p {
 .view-more-button {
     margin-top: 20px;
     text-align: left;
+    font-family: "League Spartan", Arial, sans-serif;
+    ;
 }
 
 .view-more-link {
@@ -518,6 +520,7 @@ p {
     color: var(--accent-color);
     text-decoration: none;
     font-size: 1.1rem;
+    font-family: "League Spartan", Arial, sans-serif;
     transition: all var(--transition-duration) ease;
     border: 1px solid rgba(94, 234, 212, 0.1);
     cursor: pointer;
